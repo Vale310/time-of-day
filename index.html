@@ -65,18 +65,22 @@
         myHour = myDate.getHours();
         mySentence = "";
         myColor = "";
+        myPic = "";
+
         if (myHour >= 12) {
             //alert ("It's after noon!") ;
             mySentence = "It's after noon!";
             myColor = "blue";
+            myPic = "afternoon.jpg"
         } else {
             //alert ("It's not after noon!") ;
-            mySentence = "It's not after noon!";
+            mySentence = "It's night!";
             myColor = "purple";
+            myPic = "night.jpg"
         }
-        document.getElementById("time-text").innerHTML = mySentence ;
-        document.body.style.backgroundColor = myColor;
-
+        document.getElementById("time-text").innerHTML = mySentence;
+        document.querySelector("html").style.backgroundColor = myColor;
+        document.getElementById("time-pic").src = "images/" + myPic;
         // Fixes HTML/CSS Checker links
         document.addEventListener("DOMContentLoaded", function() {
             var currentUrl = window.location.href;
