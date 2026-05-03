@@ -67,17 +67,24 @@
         myColor = "";
         myPic = "";
 
-        if (myHour >= 12) {
-            //alert ("It's after noon!") ;
+        if (myHour >= 5 && myHour < 12) {
+            mySentence = "Good morning!";
+            myColor = "lightblue";
+            myPic = "morning.jpg";
+        } else if (myHour >= 12 && myHour < 18) {
             mySentence = "It's after noon!";
             myColor = "blue";
-            myPic = "afternoon.jpg"
-        } else {
-            //alert ("It's not after noon!") ;
-            mySentence = "It's night!";
+            myPic = "afternoon.jpg";
+        } else if (myHour >= 18 && myHour < 23) {
+            mySentence = "It's evening!";
             myColor = "purple";
-            myPic = "night.jpg"
+            myPic = "evening.jpg";
+        } else {
+            mySentence = "It's night!";
+            myColor = "grey";
+            myPic = "night.jpg";
         }
+
         document.getElementById("time-text").innerHTML = mySentence;
         document.querySelector("html").style.backgroundColor = myColor;
         document.getElementById("time-pic").src = "images/" + myPic;
